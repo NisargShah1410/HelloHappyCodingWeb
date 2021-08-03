@@ -5,8 +5,6 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  AZURE_WEBAPP_NAME: happycoding-mm    # set this to your application's name
 
 jobs:
   build-and-deploy:
@@ -31,6 +29,6 @@ jobs:
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        app-name: sampledotnetcoredemo
+        publish-profile: ${{ secrets.DOTNET_WEB_APP }}
         package: './dotnetcorewebapp'
