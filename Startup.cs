@@ -32,7 +32,7 @@ namespace HelloHappyCodingWeb
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello Happy Coding!");
+                    await context.Response.WriteAsync("Hello !! This dotnet app is deployed on Azure web app");
                 });
             });
         }
