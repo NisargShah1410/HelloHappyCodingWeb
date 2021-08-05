@@ -23,6 +23,11 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+      
+    - name: unit test
+      run: |
+          dotnet add package coverlet.msbuild
+          dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
     - name: dotnet publish
       run: |
         dotnet publish -c Release -o dotnetcorewebapp 
